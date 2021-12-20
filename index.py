@@ -17,18 +17,11 @@ for letter in random_word:
     else:
         display+="_"
 
-checklist=[]
-for letter in random_word:
-    if letter==" ":
-        checklist+=" "
-    else:
-        checklist+=letter
-
 victory=False
 
 while victory!=True:
     hangman.letter_guess(random_word,display)
-    if display==checklist:
+    if "_" not in display:
         print("You win")
         break
 

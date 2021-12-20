@@ -36,5 +36,7 @@ def letter_guess(random_word, display):
     for letter in random_word:
         if letter==guess:    
             display[position]=letter
+        # elif letter!=guess:
+        #     print("Oh No! You lost a life")
         position+=1    
     print_format_list(display)
