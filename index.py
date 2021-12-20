@@ -17,20 +17,27 @@ for letter in random_word:
     else:
         display+="_"
 
-victory=False
+game_over=False
+lives=7
 
-while victory!=True:
-    hangman.letter_guess(random_word,display)
+while game_over!=True:
+#     # lives=hangman.letter_guess(random_word,display,max_life)
+    guess = input("\nGuess a letter: ").lower()
+    position = 0
+    for letter in random_word:
+        if letter == guess:
+            display[position] = letter
+        position+=1    
+    if guess not in random_word:
+        lives-=1
+        print(hangman.stages[lives])
+        print("\nYou lost a life, be careful")
+            
+    hangman.print_format_list(display)
+
     if "_" not in display:
-        print("You win")
-        break
-
-
-
-
-
-
-# right_guess=0
-# wrong_guess=0
-
-
+        print("You Won!")
+        game_over=True
+    if lives==0:
+        print(f"\nYou Lost :( \nThe word was \"{random_word}\"")
+        game_over=True
