@@ -1,8 +1,8 @@
 word_list = {
     "Electronics": ["microwave oven", "washing Machine", "television", "refrigerator", "toaster"],
     "Astronomy": ["constellation", "dark matter", "hubble telescope", "meteor shower", "milky way", "solar system"],
-    "Countries": ["soviet union", "argentina", "bosnia and herzegovina", "costa rica", "czech republic", "dominican republic",
-    "ecuador", "finland"],
+    "Countries": ["soviet union", "argentina", "united kingdom", "brazil", "germany", "france",
+    "india", "portugal", "spain", "mexico", "ukraine", "sweden"],
     "Chemical Elements": ["aluminum", "antimony", "beryllium", "bismuth", "chlorine", "chromium", "fluorine", "gallium", "germanium", "hydrogen"],
     "Geography": ["altitude", "antarctic circle", "equator", "longitude", "prime meridian"],
     "Monsters": ["boogeyman", "centaur", "cyclops", "godzilla", "golem", "werewolf", "yeti"],
