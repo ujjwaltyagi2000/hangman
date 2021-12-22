@@ -2,9 +2,8 @@ import random
 import hangman
 import os
 
-print("\nHello and Welcome to the Hangman Game!")
 category=random.choice(list(hangman.word_list))
-print(f"\nThe word below belongs to \"{category}\" category:\n")
+
 random_word=random.choice(hangman.word_list[category])
 
 hangman.gen_blanks(random_word)
@@ -22,9 +21,15 @@ game_over=False
 lives=7
 
 while game_over!=True:
-  # lives=hangman.letter_guess(random_word,display,max_life)
+    
     os.system('cls' if os.name == 'nt' else 'clear')
 
+    print('''
+
+    █──█ █▀▀█ █▀▀▄ █▀▀▀ █▀▄▀█ █▀▀█ █▀▀▄ 
+    █▀▀█ █▄▄█ █──█ █─▀█ █─▀─█ █▄▄█ █──█ 
+    ▀──▀ ▀──▀ ▀──▀ ▀▀▀▀ ▀───▀ ▀──▀ ▀──▀
+    ''')
     print(f"\nLives Remaining: {lives}")
     print(f"\nThe word below belongs to \"{category}\" category:\n")
     hangman.print_format_list(display)
@@ -42,27 +47,28 @@ while game_over!=True:
         print(hangman.stages[lives])
         print("\nYou lost a life, be careful")
         print(f"\nLives Remaining: {lives}")
+
         try:
-            input("Press enter to continue")
+            input("\nPress enter to continue")
         except SyntaxError:
             pass
             
     hangman.print_format_list(display)
 
     if "_" not in display:
-        print("You Won!")
+        print("\nYou Won!")
         game_over=True
 
         try:
-            input("Press enter to continue")
+            input("\nPress enter to continue")
         except SyntaxError:
             pass
 
     if lives==0:
-        print(f"\nYou Lost :( \nThe word was \"{random_word}\"")
+        print(f"\nYou Lost :( \n\nThe word was \"{random_word}\"")
         game_over=True
 
         try:
-            input("Press enter to continue")
+            input("\nPress enter to continue")
         except SyntaxError:
             pass
